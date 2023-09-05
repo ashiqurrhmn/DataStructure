@@ -7,7 +7,7 @@ typedef struct node
     struct node *link;
 } Node;
 
-Node *newNode(Node *nextNode, int data)
+Node *newNode(int data, Node *nextNode)
 {
     Node *temp = (Node*)malloc(sizeof(Node));
 
@@ -36,12 +36,9 @@ void print(Node *head)
 
 int main()
 {
-    Node *head = NULL;
-    head = newNode(head, 45);
-    head = newNode(head, 455);
-    head = newNode(head, 495);
-
+    Node *head = newNode(40, newNode(50, newNode(60, NULL)));
     print(head);
 
     return 0;
 }
+
